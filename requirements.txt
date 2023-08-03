@@ -1,0 +1,4 @@
+PyObjC
+playsound
+websocket
+hashlib
