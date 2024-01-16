@@ -1,4 +1,4 @@
 PyObjC
 playsound
 websocket
-hashlib
+websocket-client
