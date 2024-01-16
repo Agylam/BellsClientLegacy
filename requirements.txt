@@ -2,3 +2,4 @@ PyObjC
 playsound
 websocket
 websocket-client
+boto3

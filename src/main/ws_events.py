@@ -19,10 +19,15 @@ def on_message(ws, message):
             case "PLAY":
                 download_sound(args[0])
                 print("Проигрывание файла",args[0])
-                playsound(SOUNDS_DIRNAME+"/"+args[0]+".mp3", False)
+                playsound(SOUNDS_DIRNAME+"/bells/"+args[0]+".mp3", False)
 
             case "WARN":
                 download_sound(args[0])
+
+            case "ANNOUNCEMENT":
+                download_sound(args[0], "announcements")
+                print("Проигрывание объявления",args[0])
+                playsound(SOUNDS_DIRNAME+"/announcements/"+args[0]+".mp3", False)
 
             case "AUTH_REQUEST":
                 print("Отправляю аутентификационные данные")

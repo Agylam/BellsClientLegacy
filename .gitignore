@@ -1,5 +1,5 @@
 httpServe
-sounds/*
+sounds/
 .DS_Store
 .idea
 

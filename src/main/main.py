@@ -2,12 +2,14 @@ import os
 import websocket
 from dotenv import load_dotenv
 
-from ws_events import on_close, on_message, on_open
 load_dotenv()
+
+from ws_events import on_close, on_message, on_open
 
 ENDPOINT_URL = os.environ.get('ENDPOINT_URL')
 
 def execute_main():
+    print("Текущая деректория:", os.getcwd())
     ws = websocket.WebSocketApp(
         ENDPOINT_URL,
         on_open=on_open,
