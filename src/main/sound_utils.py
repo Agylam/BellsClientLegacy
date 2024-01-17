@@ -48,11 +48,7 @@ def download_sound(uuid, type="bell"):
     if not os.path.isdir(save_path):
         os.mkdir(save_path)
     try:
-        obj = s3client.get_object(Bucket=S3_BUCKET, Key=s3_path)
-        file_buffer = obj['Body'].read().decode('utf-8')
-
-        with open(save_path + uuid + ".mp3", "w") as mp3:
-            mp3.write(file_buffer)
+        s3client.download_file(S3_BUCKET, s3_path, save_path + uuid + ".mp3")
     except botocore.exceptions.ClientError as e:
         if e.response['Error']['Code'] == "404":
             print("The object does not exist.")

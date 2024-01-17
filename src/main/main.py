@@ -20,5 +20,5 @@ def execute_main():
     on_close()
 
 
-if __name__ == "__main__":  # Добавьте это условие
+if __name__ == "__main__":
     execute_main()

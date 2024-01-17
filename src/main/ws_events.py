@@ -28,6 +28,7 @@ def on_message(ws, message):
                 download_sound(args[0], "announcements")
                 print("Проигрывание объявления",args[0])
                 playsound(SOUNDS_DIRNAME+"/announcements/"+args[0]+".mp3", False)
+                ws.send("PLAYED_ANNOUNCEMENT "+args[0])
 
             case "AUTH_REQUEST":
                 print("Отправляю аутентификационные данные")
@@ -41,6 +42,9 @@ def on_message(ws, message):
 
             case "ERROR":
                 print("Ошибка от сервера:",' '.join(args))
+
+            case "OK":
+                pass
 
             case _:
                 print("Ошибка - неизвестная комманда от сервера")
