@@ -1,6 +1,6 @@
 import os
 import hashlib
-from sound_utils import download_sound
+from sound_utils import download_sound, delete_sound
 from playsound import playsound
 
 SOUNDS_DIRNAME = os.environ.get('SOUNDS_DIRNAME')
@@ -29,6 +29,7 @@ def on_message(ws, message):
                 print("Проигрывание объявления",args[0])
                 playsound(SOUNDS_DIRNAME+"/announcements/"+args[0]+".mp3", False)
                 ws.send("PLAYED_ANNOUNCEMENT "+args[0])
+                delete_sound(args[0], "announcements")
 
             case "AUTH_REQUEST":
                 print("Отправляю аутентификационные данные")

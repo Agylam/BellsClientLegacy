@@ -56,3 +56,16 @@ def download_sound(uuid, type="bell"):
             raise
 
     print("Звук", uuid, "успешно загружен")
+
+
+def delete_sound(uuid, type="bell"):
+    downloaded_sounds = get_sounds()[type]
+    if uuid not in downloaded_sounds:
+        print("Звук", uuid, "уже удалён")
+        return
+    print("Звук", uuid, "удаляется...")
+
+    saved_path = SOUNDS_DIRNAME + "/" + type + "/"+ uuid + ".mp3"
+    os.remove(saved_path)
+
+    print("Звук", uuid, "успешно удалён")
