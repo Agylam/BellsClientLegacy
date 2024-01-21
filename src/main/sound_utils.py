@@ -42,7 +42,7 @@ def download_sound(uuid, type="bell"):
         return
     print("Звук", uuid, "загружается...")
 
-    s3_path = type + "/" + SCHOOL_UUID + "/" + uuid + ".mp3"
+    s3_path = SCHOOL_UUID + "/" + type + "/" + uuid + ".mp3"
     save_path = SOUNDS_DIRNAME + "/" + type + "/"
 
     if not os.path.isdir(save_path):

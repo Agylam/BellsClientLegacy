@@ -25,6 +25,6 @@ def execute_main():
         print("Попытка повторного подключения...")
         time.sleep(3)
 
-
 if __name__ == "__main__":
     execute_main()
+
