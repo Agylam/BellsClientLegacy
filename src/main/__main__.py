@@ -23,7 +23,7 @@ def execute_main():
         ws.run_forever()
         on_close()
         print("Попытка повторного подключения...")
-        time.sleep(3)
+        time.sleep(1)
 
 if __name__ == "__main__":
     execute_main()
