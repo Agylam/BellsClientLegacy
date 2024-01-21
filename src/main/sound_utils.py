@@ -22,7 +22,7 @@ s3client = boto3.client('s3', endpoint_url=S3_ENDPOINT,
                         region_name=S3_REGION)
 
 
-def get_sounds_in_folder(dir="bell"):
+def get_sounds_in_folder(dir="bells"):
     if not os.path.isdir(SOUNDS_DIRNAME + "/" + dir):
         return []
     return list(map(get_filename, listdir_nohidden(SOUNDS_DIRNAME + "/" + dir)))
@@ -35,7 +35,7 @@ def get_sounds():
     }
 
 
-def download_sound(uuid, type="bell"):
+def download_sound(uuid, type="bells"):
     downloaded_sounds = get_sounds()[type]
     if uuid in downloaded_sounds:
         print("Звук", uuid, "уже загружен")

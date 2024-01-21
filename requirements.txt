@@ -1,5 +1,5 @@
-PyObjC
 playsound
+python-dotenv
 websocket
 websocket-client
 boto3
