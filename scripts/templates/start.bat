@@ -1,5 +1,4 @@
 @echo off
-cd ..
-git pull
+cd {$WORK_PATH}
 python ./src/main
 pause
